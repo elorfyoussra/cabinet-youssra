@@ -37,7 +37,7 @@
             background: rgba(10, 77, 72, 0.95);
             backdrop-filter: blur(10px);
             color: white;
-            padding: 15px 5%;
+            padding: 15px 3%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -50,26 +50,29 @@
         }
 
         nav .logo {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: #fff;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+            white-space: nowrap;
         }
 
         nav .nav-links {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             list-style: none;
+            align-items: center;
         }
 
         nav .nav-links a {
             color: white;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             transition: 0.3s;
+            white-space: nowrap; /* يمنع نزول الكلمات لسطر جديد */
         }
 
         nav .nav-links a:hover {
@@ -237,7 +240,7 @@
             flex-shrink: 0;
         }
 
-        /* ضبط اتجاه الأرقام من اليسار لليمين مع إمكانية النسك */
+        /* ضبط اتجاه الأرقام من اليسار لليمين مع إمكانية النسخ */
         .phone-ltr {
             direction: ltr;
             unicode-bidi: embed;
@@ -250,7 +253,7 @@
             color: var(--secondary);
         }
 
-        /* قسم آراء المرضى */
+        /* قسم آراء المرضى بالدارجة */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -460,13 +463,13 @@
             </div>
         </div>
 
-        <!-- قسم آراء المرضى المستفيدين (Testimonials) -->
+        <!-- قسم آراء المرضى بالدارجة المغربية -->
         <div class="card" id="testimonials">
-            <h3 class="section-title"><i class="fa-solid fa-comments"></i> آراء بعض المرضى المستفيدين</h3>
+            <h3 class="section-title"><i class="fa-solid fa-comments"></i> شنو قالو علينا المرضى</h3>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <i class="fa-solid fa-quote-right quote"></i>
-                    <p>"عيادة رائعة جداً وطبيبة محترفة. وجود خدمات طبية مقربة في منطقة تيدلي خفف عنا الكثير من عناء التنقل."</p>
+                    <p>"صراحة عيادة فالمستوى، والطبيبة تبارك الله عليها محترفة وكتشرح مزيان. تهنات المنطقة بوجود عيادة بحال هادي قربنا!"</p>
                     <div class="testimonial-author">
                         <span>- إبراهيم م.</span>
                         <div class="stars">
@@ -480,9 +483,37 @@
                 </div>
                 <div class="testimonial-card">
                     <i class="fa-solid fa-quote-right quote"></i>
-                    <p>"حسن استقبال وعناية فائقة بالأطفال وتتبع دقيق. شكراً للدكتورة يسرى على تففانيها المستمر."</p>
+                    <p>"معاملة زوينة بزااف، استقبال في المستوى وعناية كبيرة بالأطفال. الله يكثر خير الدكتورة يسرى."</p>
                     <div class="testimonial-author">
                         <span>- فاطمة ز.</span>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-right quote"></i>
+                    <p>"تبارك الله على الطبيبة، إنسانية بزاف وكتصنت للمريض بكل أريحية. الله يوفقها."</p>
+                    <div class="testimonial-author">
+                        <span>- يوسف أ.</span>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-right quote"></i>
+                    <p>"خدمات نقية ومرتبة، وتنظيم زوين فالمستعجلات. شكراً طاقم العيادة على المجهودات."</p>
+                    <div class="testimonial-author">
+                        <span>- مريم ك.</span>
                         <div class="stars">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
