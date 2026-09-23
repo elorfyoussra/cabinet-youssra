@@ -133,7 +133,7 @@
             border: 1px solid rgba(0,0,0,0.04);
         }
 
-        /* تنسيق عرض الصور بوضوح تام وبدون قص */
+        /* تنسيق عرض الصورة الأولى بوضوح تام وبدون قص */
         .image-gallery {
             display: flex;
             flex-direction: column;
@@ -158,8 +158,7 @@
         .image-container img {
             width: 100%;
             height: auto;
-            max-height: none;
-            object-fit: contain; /* تضمن ظهور الصورة كاملة دون قص أي جزء منها */
+            object-fit: contain;
             border-radius: 8px;
         }
 
@@ -352,16 +351,13 @@
     <!-- المحتوى الرئيسي -->
     <div class="container">
         
-        <!-- قسم الصور التعريفية والترحيب -->
+        <!-- قسم البطاقة التعريفية والترحيب -->
         <div class="card" id="about">
             
-            <!-- عرض الصورتين كاملتين وواضحتين تماماً -->
+            <!-- عرض الصورة الأولى فقط بوضوح تام -->
             <div class="image-gallery">
                 <div class="image-container">
-                    <img src="image1.jpg" alt="بطاقة العيادة 1">
-                </div>
-                <div class="image-container">
-                    <img src="image.jpg" alt="بطاقة العيادة 2">
+                    <img src="image1.jpg" alt="بطاقة عيادة الدكتورة يسرى العرف">
                 </div>
             </div>
 
