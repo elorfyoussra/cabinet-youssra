@@ -237,11 +237,94 @@
             flex-shrink: 0;
         }
 
-        /* ضبط اتجاه الأرقام من اليسار لليمين */
+        /* ضبط اتجاه الأرقام من اليسار لليمين مع إمكانية النسك */
         .phone-ltr {
             direction: ltr;
             unicode-bidi: embed;
             display: inline-block;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .phone-ltr:hover {
+            color: var(--secondary);
+        }
+
+        /* قسم آراء المرضى */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .testimonial-card {
+            background: #f8fafc;
+            border-radius: 14px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .testimonial-card i.quote {
+            color: var(--secondary);
+            font-size: 24px;
+            opacity: 0.3;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card p {
+            font-size: 14px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-size: 12px;
+        }
+
+        /* إشعار نسخ النص */
+        #copy-toast {
+            visibility: hidden;
+            min-width: 200px;
+            background-color: var(--primary);
+            color: #fff;
+            text-align: center;
+            border-radius: 50px;
+            padding: 12px;
+            position: fixed;
+            z-index: 99999;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 14px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        #copy-toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from { bottom: 0; opacity: 0; }
+            to { bottom: 30px; opacity: 1; }
+        }
+
+        @keyframes fadeout {
+            from { bottom: 30px; opacity: 1; }
+            to { bottom: 0; opacity: 0; }
         }
 
         /* أزرار الاتصال الكبرى */
@@ -328,6 +411,7 @@
         <ul class="nav-links">
             <li><a href="#about">العيادة</a></li>
             <li><a href="#services">الخدمات</a></li>
+            <li><a href="#testimonials">آراء المرضى</a></li>
             <li><a href="#contact">اتصل بنا</a></li>
         </ul>
     </nav>
@@ -376,6 +460,41 @@
             </div>
         </div>
 
+        <!-- قسم آراء المرضى المستفيدين (Testimonials) -->
+        <div class="card" id="testimonials">
+            <h3 class="section-title"><i class="fa-solid fa-comments"></i> آراء بعض المرضى المستفيدين</h3>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-right quote"></i>
+                    <p>"عيادة رائعة جداً وطبيبة محترفة. وجود خدمات طبية مقربة في منطقة تيدلي خفف عنا الكثير من عناء التنقل."</p>
+                    <div class="testimonial-author">
+                        <span>- إبراهيم م.</span>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-right quote"></i>
+                    <p>"حسن استقبال وعناية فائقة بالأطفال وتتبع دقيق. شكراً للدكتورة يسرى على تففانيها المستمر."</p>
+                    <div class="testimonial-author">
+                        <span>- فاطمة ز.</span>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- معلومات الاتصال والعنوان -->
         <div class="card" id="contact">
             <h3 class="section-title"><i class="fa-solid fa-address-book"></i> معلومات الاتصال والعنوان</h3>
@@ -390,13 +509,13 @@
                 <div class="info-item">
                     <i class="fa-solid fa-phone-volume"></i>
                     <div>
-                        <strong>الهاتف الأول:</strong> <span class="phone-ltr">06 64 33 39 44</span>
+                        <strong>الهاتف الأول (اضغط للنسخ):</strong> <span class="phone-ltr" onclick="copyToClipboard('06 64 33 39 44')">06 64 33 39 44</span>
                     </div>
                 </div>
                 <div class="info-item">
                     <i class="fa-solid fa-phone"></i>
                     <div>
-                        <strong>الهاتف الثاني:</strong> <span class="phone-ltr">06 39 39 11 12</span>
+                        <strong>الهاتف الثاني (اضغط للنسخ):</strong> <span class="phone-ltr" onclick="copyToClipboard('06 39 39 11 12')">06 39 39 11 12</span>
                     </div>
                 </div>
                 <div class="info-item">
@@ -407,7 +526,7 @@
                 </div>
             </div>
 
-            <!-- أزرار الاتصال السريع (بدون واتساب) -->
+            <!-- أزرار الاتصال السريع -->
             <div class="action-buttons">
                 <a href="tel:0664333944" class="btn btn-call">
                     <i class="fa-solid fa-phone"></i> اتصال بالرقم 1
@@ -420,7 +539,10 @@
 
     </div>
 
-    <!-- الزر العائم الجانبي للاتصال المباشر فقط -->
+    <!-- رسالة التنبيه عند النسخ -->
+    <div id="copy-toast">تم نسخ رقم الهاتف بنجاح!</div>
+
+    <!-- الزر العائم الجانبي للاتصال المباشر -->
     <div class="floating-buttons">
         <a href="tel:0664333944" class="float-btn" title="اتصال مباشر بالعيادة">
             <i class="fa-solid fa-phone"></i>
@@ -431,6 +553,19 @@
     <footer>
         جميع الحقوق محفوظة &copy; 2026 | عيادة الدكتورة <span>العرف يسرى</span> - تيدلي ورزازات
     </footer>
+
+    <!-- سكربت نسخ الأرقام -->
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                var toast = document.getElementById("copy-toast");
+                toast.className = "show";
+                setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+            }, function(err) {
+                console.error('تعذر نسخ النص: ', err);
+            });
+        }
+    </script>
 
 </body>
 </html>
