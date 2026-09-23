@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيادة الدكتورة العرف يسرى | الطب العام</title>
+    <!-- خط عربي عصري -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0b4f4c;
+            --secondary-color: #c5a059;
+            --light-bg: #f8fafc;
+            --text-color: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* رأس الصفحة */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #063533);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 18px;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* المحتوى الرئيسي */
+        .container {
+            max-width: 900px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h3 i {
+            color: var(--secondary-color);
+        }
+
+        /* معلومات الطبيبة */
+        .doctor-info p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .doctor-info i {
+            color: var(--primary-color);
+            width: 25px;
+        }
+
+        /* أزرار الاتصال السريع */
+        .contact-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 200px;
+            padding: 14px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebe5d;
+            transform: translateY(-2px);
+        }
+
+        .btn-call {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-call:hover {
+            background-color: #083b39;
+            transform: translateY(-2px);
+        }
+
+        /* الخدمات */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .service-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border-right: 4px solid var(--secondary-color);
+        }
+
+        .service-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .service-box p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* التذييل */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #1e293b;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 26px; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header>
+        <h1>د. العرف يسرى</h1>
+        <h2>الطب العام | Médecine Générale</h2>
+        <p>خريجة كلية الطب بالرباط</p>
+    </header>
+
+    <!-- محتوى الموقع -->
+    <div class="container">
+        
+        <!-- قسم الترحيب والخدمات -->
+        <div class="card">
+            <h3><i class="fa-solid fa-stethoscope"></i> مرحباً بكم في العيادة الطبية</h3>
+            <p>يسعدنا تقديم خدمات طبية مقربة وعالية الجودة لساكنة تيدلي والمنطقة المجاورة، تحت إشراف الدكتورة يسرى العرف. العيادة مجهزة لتلبية مختلف الاحتياجات الصحية والاستشارات العامة لك ولأسرتك.</p>
+            
+            <div class="services-grid" style="margin-top: 25px;">
+                <div class="service-box">
+                    <h4>الاستشارات الطبية العامة</h4>
+                    <p>تشخيص وعلاج الأمراض العامة بمختلف أنواعها للكبار والصغار.</p>
+                </div>
+                <div class="service-box">
+                    <h4>صحة الأم والطفل</h4>
+                    <p>تتبع نمو وصحة الأطفال وتقديم الاستشارات الطبية للنساء.</p>
+                </div>
+                <div class="service-box">
+                    <h4>الحالات المستعجلة</h4>
+                    <p>استقبال وتوجيه الحالات الاستعجالية بالمنطقة بحرفية تامة.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- معلومات التواصل والعنوان -->
+        <div class="card doctor-info">
+            <h3><i class="fa-solid fa-location-dot"></i> العنوان ومعلومات الاتصال</h3>
+            <p><i class="fa-solid fa-map-location-dot"></i> <strong>العنوان:</strong> تيدلي - ورزازات (سوق الحد تيدلي، طريق طلعة المؤدية لأزلاغ حدى القصب)</p>
+            <p><i class="fa-solid fa-phone"></i> <strong>الهاتف الأول:</strong> 0664333944</p>
+            <p><i class="fa-solid fa-phone"></i> <strong>الهاتف الثاني:</strong> 0639391112</p>
+            <p><i class="fa-solid fa-envelope"></i> <strong>البريد الإلكتروني:</strong> Youssra.elorf@gmail.com</p>
+
+            <!-- أزرار التواصل التفاعلية -->
+            <div class="contact-buttons">
+                <a href="tel:0664333944" class="btn btn-call">
+                    <i class="fa-solid fa-phone-volume"></i> اتصال مباشر
+                </a>
+                <a href="https://wa.me/212664333944" target="_blank" class="btn btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> مراسلة واتساب
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- التذييل -->
+    <footer>
+        جميع الحقوق محفوظة &copy; 2026 | عيادة الدكتورة العرف يسرى - تيدلي ورزازات
+    </footer>
+
+</body>
+</html>
