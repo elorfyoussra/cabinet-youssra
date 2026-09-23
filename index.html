@@ -13,7 +13,6 @@
             --primary: #0a4d48;
             --primary-dark: #063532;
             --secondary: #d4af37;
-            --accent: #25d366;
             --light: #f8fafc;
             --text-dark: #1e293b;
             --text-light: #64748b;
@@ -133,7 +132,6 @@
             border: 1px solid rgba(0,0,0,0.04);
         }
 
-        /* تنسيق عرض الصورة الأولى بوضوح تام وبدون قص */
         .image-gallery {
             display: flex;
             flex-direction: column;
@@ -239,6 +237,13 @@
             flex-shrink: 0;
         }
 
+        /* ضبط اتجاه الأرقام من اليسار لليمين */
+        .phone-ltr {
+            direction: ltr;
+            unicode-bidi: embed;
+            display: inline-block;
+        }
+
         /* أزرار الاتصال الكبرى */
         .action-buttons {
             display: flex;
@@ -263,17 +268,12 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
         }
 
-        .btn-wa {
-            background-color: var(--accent);
-            color: white;
-        }
-
         .btn-call {
             background-color: var(--primary);
             color: white;
         }
 
-        /* الأزرار العائمة الجانبية */
+        /* الزر العائم الجانبي للاتصال فقط */
         .floating-buttons {
             position: fixed;
             bottom: 25px;
@@ -296,13 +296,6 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             transition: 0.3s;
             text-decoration: none;
-        }
-
-        .float-btn.whatsapp {
-            background-color: var(--accent);
-        }
-
-        .float-btn.phone {
             background-color: var(--primary);
         }
 
@@ -354,7 +347,6 @@
         <!-- قسم البطاقة التعريفية والترحيب -->
         <div class="card" id="about">
             
-            <!-- عرض الصورة الأولى فقط بوضوح تام -->
             <div class="image-gallery">
                 <div class="image-container">
                     <img src="image1.jpg" alt="بطاقة عيادة الدكتورة يسرى العرف">
@@ -398,13 +390,13 @@
                 <div class="info-item">
                     <i class="fa-solid fa-phone-volume"></i>
                     <div>
-                        <strong>الهاتف الأول:</strong> 06 64 33 39 44
+                        <strong>الهاتف الأول:</strong> <span class="phone-ltr">06 64 33 39 44</span>
                     </div>
                 </div>
                 <div class="info-item">
                     <i class="fa-solid fa-phone"></i>
                     <div>
-                        <strong>الهاتف الثاني:</strong> 06 39 39 11 12
+                        <strong>الهاتف الثاني:</strong> <span class="phone-ltr">06 39 39 11 12</span>
                     </div>
                 </div>
                 <div class="info-item">
@@ -415,7 +407,7 @@
                 </div>
             </div>
 
-            <!-- أزرار الاتصال السريع -->
+            <!-- أزرار الاتصال السريع (بدون واتساب) -->
             <div class="action-buttons">
                 <a href="tel:0664333944" class="btn btn-call">
                     <i class="fa-solid fa-phone"></i> اتصال بالرقم 1
@@ -423,20 +415,14 @@
                 <a href="tel:0639391112" class="btn btn-call" style="background-color: var(--secondary);">
                     <i class="fa-solid fa-phone"></i> اتصال بالرقم 2
                 </a>
-                <a href="https://wa.me/212664333944" target="_blank" class="btn btn-wa">
-                    <i class="fa-brands fa-whatsapp"></i> واتساب
-                </a>
             </div>
         </div>
 
     </div>
 
-    <!-- الأزرار العائمة الجانبية للاتصال السريع -->
+    <!-- الزر العائم الجانبي للاتصال المباشر فقط -->
     <div class="floating-buttons">
-        <a href="https://wa.me/212664333944" target="_blank" class="float-btn whatsapp" title="تواصل عبر واتساب">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="tel:0664333944" class="float-btn phone" title="اتصال مباشر بالعيادة">
+        <a href="tel:0664333944" class="float-btn" title="اتصال مباشر بالعيادة">
             <i class="fa-solid fa-phone"></i>
         </a>
     </div>
