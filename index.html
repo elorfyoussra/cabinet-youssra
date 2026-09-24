@@ -253,6 +253,97 @@
             color: var(--secondary);
         }
 
+        /* تصميم بطاقة مشاركة رابط الموقع مع صورة (Card Preview Style) */
+        .website-share-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: 0.3s;
+        }
+
+        @media (min-width: 600px) {
+            .website-share-card {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .website-preview-img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: cover;
+        }
+
+        @media (min-width: 600px) {
+            .website-preview-img {
+                width: 220px;
+                max-height: 150px;
+            }
+        }
+
+        .website-share-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .website-share-info h4 {
+            color: var(--primary);
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .website-share-info p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .share-link-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+
+        .share-link-box span {
+            direction: ltr;
+            font-size: 12px;
+            color: var(--primary);
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .btn-copy-link {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            transition: 0.2s;
+            flex-shrink: 0;
+        }
+
+        .btn-copy-link:hover {
+            background: var(--primary-dark);
+        }
+
         /* قسم آراء المرضى بالدارجة المغربية */
         .testimonials-grid {
             display: grid;
@@ -359,7 +450,7 @@
             color: white;
         }
 
-        /* الأزرار العائمة الجانبية للاتصال بالرقمين */
+        /* الأزرار العائمة الجانبية للاتصال المباشر بالرقمين */
         .floating-buttons {
             position: fixed;
             bottom: 25px;
@@ -394,7 +485,6 @@
             transform: scale(1.1);
         }
 
-        /* تلميح صغير يظهر عند مرور الماوس أو وضع الفأرة لتمييز الأرقام */
         .float-btn::after {
             content: attr(data-tooltip);
             position: absolute;
@@ -584,8 +674,24 @@
                 </div>
             </div>
 
+            <!-- بطاقة مشاركة رابط الموقع مرافقة لصورة -->
+            <div style="margin-top: 20px;">
+                <strong style="color: var(--primary); display: block; margin-bottom: 8px;"><i class="fa-solid fa-share-nodes"></i> شارك رابط الموقع مع الأهل والأصدقاء:</strong>
+                <div class="website-share-card">
+                    <img src="image1.jpg" alt="صورة معاينة موقع عيادة الدكتورة يسرى العرف" class="website-preview-img">
+                    <div class="website-share-info">
+                        <h4>عيادة الدكتورة العرف يسرى - تيدلي</h4>
+                        <p>تتبع صحي، استشارات طبية عامة ومستعجلات بقرية تيدلي ورزازات.</p>
+                        <div class="share-link-box">
+                            <span id="site-url">https://elorfyoussra.github.io/cabinet-youssra/</span>
+                            <button class="btn-copy-link" onclick="copyToClipboard('https://elorfyoussra.github.io/cabinet-youssra/')">نسخ الرابط</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- أزرار الاتصال السريع -->
-            <div class="action-buttons">
+            <div class="action-buttons" style="margin-top: 25px;">
                 <a href="tel:0664333944" class="btn btn-call">
                     <i class="fa-solid fa-phone"></i> اتصال بالرقم 1
                 </a>
@@ -598,7 +704,7 @@
     </div>
 
     <!-- رسالة التنبيه عند النسخ -->
-    <div id="copy-toast">تم نسخ رقم الهاتف بنجاح!</div>
+    <div id="copy-toast">تم النسخ بنجاح!</div>
 
     <!-- الأزرار العائمة الجانبية للاتصال المباشر بالرقمين -->
     <div class="floating-buttons">
@@ -615,7 +721,7 @@
         جميع الحقوق محفوظة &copy; 2026 | عيادة الدكتورة <span>العرف يسرى</span> - تيدلي ورزازات
     </footer>
 
-    <!-- سكربت نسخ الأرقام -->
+    <!-- سكربت نسخ النصوص -->
     <script>
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(function() {
